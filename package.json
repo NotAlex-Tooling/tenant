@@ -1,0 +1,16 @@
+{
+  "name": "tenant",
+  "version": "1.0.0",
+  "description": "Web interface for passive Microsoft 365 domain and user reconnaissance.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

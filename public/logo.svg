@@ -1,0 +1,22 @@
+<!-- tenant logo: a terminal-chip wordmark with a cyan prompt mark and a subtle glow -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 160" width="470" height="160" role="img" aria-label="tenant">
+  <defs>
+    <filter id="glow" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient id="chip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#11161f" />
+      <stop offset="1" stop-color="#0a0e14" />
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="464" height="154" rx="26" fill="url(#chip)" stroke="#22d3ee" stroke-opacity="0.28" stroke-width="2" />
+  <g filter="url(#glow)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="62" font-weight="800" letter-spacing="1">
+    <text x="235" y="82" text-anchor="middle" dominant-baseline="central">
+      <tspan fill="#22d3ee">&gt;&#160;t</tspan><tspan fill="#e6edf3">enant</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,96 @@
+<!-- tenant web interface: passive Microsoft 365 domain and user reconnaissance -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tenant — passive Microsoft 365 recon</title>
+  <meta name="description" content="Check whether a domain runs on Microsoft 365, or whether a user account exists, using public pre-auth endpoints." />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem("tenant-theme"); } catch (e) {}
+      var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var theme = stored || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="/" aria-label="tenant home">
+      <span class="brand__prompt">&gt;</span><span class="brand__accent">t</span><span>enant</span>
+    </a>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </svg>
+    </button>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <p class="hero__eyebrow load-rise">passive microsoft 365 recon</p>
+      <h1 class="hero__title load-rise">Is it on Microsoft&nbsp;365?</h1>
+      <p class="hero__desc load-rise">
+        Check whether a domain is registered with Microsoft 365, or whether a user account exists,
+        using public pre-auth endpoints. No login attempts, no sign-in events, no alerts.
+      </p>
+    </section>
+
+    <section class="console load-rise" aria-label="Reconnaissance console">
+      <div class="tabs" role="tablist" aria-label="Check type">
+        <span class="tabs__indicator" id="tab-indicator" data-pos="domain"></span>
+        <button class="tab" id="tab-domain" role="tab" aria-selected="true" type="button">domain</button>
+        <button class="tab" id="tab-user" role="tab" aria-selected="false" type="button">user</button>
+      </div>
+
+      <div class="form">
+        <label class="field" for="target">
+          <span class="field__caret" aria-hidden="true">&gt;</span>
+          <input
+            class="field__input"
+            id="target"
+            type="text"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+            placeholder="contoso.com"
+            aria-label="Domain to check"
+          />
+        </label>
+        <button class="check" id="check" type="button">
+          check
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <p class="note" id="note">Checks if a domain is registered with Microsoft 365.</p>
+    </section>
+
+    <section class="readout readout--empty" id="readout" aria-live="polite">
+      <span class="field__caret" aria-hidden="true">&gt;</span>
+      <span>Enter a domain above and run a check.</span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer__link" href="https://github.com/NotAlex-Tooling/" target="_blank" rel="noopener noreferrer">Tooling by NotAlex</a>
+    <span class="footer__sep" aria-hidden="true">·</span>
+    <a class="footer__link" href="https://github.com/NotAlex-Tooling/tenant" target="_blank" rel="noopener noreferrer">source code</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
