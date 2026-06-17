@@ -70,9 +70,3 @@ Errors return `{ "success": false, "error": "..." }`.
 - Results reflect login identities (User Principal Names), not email aliases.
 - Every check is passive and uses only public Microsoft endpoints.
 - Use it only against domains and accounts you are authorized to assess.
-
----
-
-<div align="center">
-Tooling by <a href="https://github.com/NotAlex-Tooling/">NotAlex</a> · <a href="https://github.com/NotAlex-Tooling/tenant">source code</a>
-</div>
