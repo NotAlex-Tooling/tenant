@@ -3,10 +3,6 @@
 <img src="public/logo.svg" alt="tenant" width="440" />
 
 Passive Microsoft 365 domain and user reconnaissance, in the browser.
-
-![Status](https://img.shields.io/badge/status-active-2ea043?style=for-the-badge&labelColor=0a0e14)
-![Type](https://img.shields.io/badge/type-web-0891b2?style=for-the-badge&labelColor=0a0e14)
-
 </div>
 
 ---
